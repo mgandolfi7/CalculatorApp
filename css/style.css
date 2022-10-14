@@ -1,0 +1,47 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+section, h1, h2, input, form {
+  text-align: center;
+}
+
+input {
+  width: 300px;
+  border-radius: 100px;
+  height: 60px;
+}
+
+button {
+  width: 70px;
+  font-size: 60px;
+  margin: 0;
+  border-radius: 100px;
+  color: black;
+  background: white;
+}
+
+#container {
+  padding-top: 30px;
+  background: black;
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  border-radius: 20px;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
