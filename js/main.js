@@ -11,7 +11,7 @@ document.querySelector('#two').addEventListener('click', two)
 document.querySelector('#three').addEventListener('click', three)
 document.querySelector('#addition').addEventListener('click', addition)
 document.querySelector('#zero').addEventListener('click', zero)
-document.querySelector('#decimal').addEventListener('click', equals)
+document.querySelector('#clear').addEventListener('click', clear)
 document.querySelector('#equals').addEventListener('click', equals)
 document.querySelector('#subtraction').addEventListener('click', subtraction)
 
@@ -124,6 +124,12 @@ function subtraction() {
     calculator.waitingForSecondValue = true;
     document.querySelector('input').value = ""
     opperand = '-'
+}
+
+function clear() {
+    calculator.waitingForSecondValue = false;
+    document.querySelector('input').value = ""
+
 }
 
 function equals() {
