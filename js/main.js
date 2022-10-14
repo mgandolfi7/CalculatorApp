@@ -1,145 +1,153 @@
-document.querySelector('#seven').addEventListener('click', seven)
-document.querySelector('#eight').addEventListener('click', eight)
-document.querySelector('#nine').addEventListener('click', nine)
-document.querySelector('#divide').addEventListener('click', divide)
-document.querySelector('#four').addEventListener('click', four)
-document.querySelector('#five').addEventListener('click', five)
-document.querySelector('#six').addEventListener('click', six)
-document.querySelector('#multiply').addEventListener('click', multiply)
-document.querySelector('#one').addEventListener('click', one)
-document.querySelector('#two').addEventListener('click', two)
-document.querySelector('#three').addEventListener('click', three)
-document.querySelector('#addition').addEventListener('click', addition)
-document.querySelector('#zero').addEventListener('click', zero)
-document.querySelector('#clear').addEventListener('click', clear)
-document.querySelector('#equals').addEventListener('click', equals)
-document.querySelector('#subtraction').addEventListener('click', subtraction)
+document.querySelector("#seven").addEventListener("click", seven)
+document.querySelector("#eight").addEventListener("click", eight)
+document.querySelector("#nine").addEventListener("click", nine)
+document.querySelector("#divide").addEventListener("click", divide)
+document.querySelector("#four").addEventListener("click", four)
+document.querySelector("#five").addEventListener("click", five)
+document.querySelector("#six").addEventListener("click", six)
+document.querySelector("#multiply").addEventListener("click", multiply)
+document.querySelector("#one").addEventListener("click", one)
+document.querySelector("#two").addEventListener("click", two)
+document.querySelector("#three").addEventListener("click", three)
+document.querySelector("#addition").addEventListener("click", addition)
+document.querySelector("#zero").addEventListener("click", zero)
+document.querySelector("#clear").addEventListener("click", clear)
+document.querySelector("#equals").addEventListener("click", equals)
+document.querySelector("#subtraction").addEventListener("click", subtraction)
 
 let firstNum = 0;
 let secondNum = 0;
-let opperand = ''
+let opperand = "";
+let result = 0;
 
 let calculator = {
     waitingForSecondValue: false,
 }
 
 function seven() {
-    if (calculator.waitingForSecondValue === false) {
-        firstNum = document.querySelector('input').value += 7
+    if (calculator.waitingForSecondValue === false && result === 0) {
+        firstNum = document.querySelector("input").value += 7
     } else if (calculator.waitingForSecondValue === true) {
-        secondNum = document.querySelector('input').value += 7
+        secondNum = document.querySelector("input").value += 7
     }
 } function eight() {
     if (calculator.waitingForSecondValue === false) {
-        firstNum = document.querySelector('input').value += 8
+        firstNum = document.querySelector("input").value += 8
     } else if (calculator.waitingForSecondValue === true) {
-        secondNum = document.querySelector('input').value += 8
+        secondNum = document.querySelector("input").value += 8
     }
 }
 
 function nine() {
     if (calculator.waitingForSecondValue === false) {
-        firstNum = document.querySelector('input').value += 9
+        firstNum = document.querySelector("input").value += 9
     } else if (calculator.waitingForSecondValue === true) {
-        secondNum = document.querySelector('input').value += 9
+        secondNum = document.querySelector("input").value += 9
     }
 }
 
 function four() {
     if (calculator.waitingForSecondValue === false) {
-        firstNum = document.querySelector('input').value += 4
+        firstNum = document.querySelector("input").value += 4
     } else if (calculator.waitingForSecondValue === true) {
-        secondNum = document.querySelector('input').value += 4
+        secondNum = document.querySelector("input").value += 4
     }
 }
 
 function five() {
     if (calculator.waitingForSecondValue === false) {
-        firstNum = document.querySelector('input').value += 5
+        firstNum = document.querySelector("input").value += 5
     } else if (calculator.waitingForSecondValue === true) {
-        secondNum = document.querySelector('input').value += 5
+        secondNum = document.querySelector("input").value += 5
     }
 }
 
 function six() {
     if (calculator.waitingForSecondValue === false) {
-        firstNum = document.querySelector('input').value += 6
+        firstNum = document.querySelector("input").value += 6
     } else if (calculator.waitingForSecondValue === true) {
-        secondNum = document.querySelector('input').value += 6
+        secondNum = document.querySelector("input").value += 6
     }
 }
 
 function one() {
     if (calculator.waitingForSecondValue === false) {
-        firstNum = document.querySelector('input').value += 1
+        firstNum = document.querySelector("input").value += 1
     } else if (calculator.waitingForSecondValue === true) {
-        secondNum = document.querySelector('input').value += 1
+        secondNum = document.querySelector("input").value += 1
     }
 }
 
 function two() {
     if (calculator.waitingForSecondValue === false) {
-        firstNum = document.querySelector('input').value += 2
+        firstNum = document.querySelector("input").value += 2
     } else if (calculator.waitingForSecondValue === true) {
-        secondNum = document.querySelector('input').value += 2
+        secondNum = document.querySelector("input").value += 2
     }
 }
 
 function three() {
     if (calculator.waitingForSecondValue === false) {
-        firstNum = document.querySelector('input').value += 3
+        firstNum = document.querySelector("input").value += 3
     } else if (calculator.waitingForSecondValue === true) {
-        secondNum = document.querySelector('input').value += 3
+        secondNum = document.querySelector("input").value += 3
     }
 }
 
 function zero() {
     if (calculator.waitingForSecondValue === false) {
-        firstNum = document.querySelector('input').value += 0
+        firstNum = document.querySelector("input").value += 0
     } else if (calculator.waitingForSecondValue === true) {
-
-        secondNum = document.querySelector('input').value += 0 
+        secondNum = document.querySelector("input").value += 0 
     }
 }
 
 function divide() {
     calculator.waitingForSecondValue = true;
-    document.querySelector('input').value = ""
-    opperand = '/'
+    document.querySelector("input").value = ""
+    opperand = "/"
 }
 
 function multiply() {
     calculator.waitingForSecondValue = true;
-    document.querySelector('input').value = ""
-    opperand = '*'
+    document.querySelector("input").value = ""
+    opperand = "*"
 }
 
 function addition() {
     calculator.waitingForSecondValue = true;
-    document.querySelector('input').value = ""
-    opperand = '+'
+    document.querySelector("input").value = ""
+    opperand = "+"
 }
 
 function subtraction() {
     calculator.waitingForSecondValue = true;
-    document.querySelector('input').value = ""
-    opperand = '-'
+    document.querySelector("input").value = ""
+    opperand = "-"
 }
 
 function clear() {
     calculator.waitingForSecondValue = false;
-    document.querySelector('input').value = ""
-
+    document.querySelector("input").value = ""
+    result = 0;
 }
 
 function equals() {
-    if (opperand === '/') {
-        document.querySelector('input').value = +firstNum / +secondNum
-    } else if (opperand === '*') {
-        document.querySelector('input').value = +firstNum * +secondNum        
-    } else if (opperand === '+') {
-        document.querySelector('input').value = +firstNum + +secondNum
-    } else if (opperand === '-') {
-        document.querySelector('input').value = +firstNum - +secondNum
+    if (opperand === "/" && result === 0) {
+        result = document.querySelector("input").value = +firstNum / +secondNum
+    } else if (opperand === "/" && result !== 0) {
+        result = document.querySelector("input").value = +result / +secondNum
+    } else if (opperand === "*" && result === 0) {
+        result = document.querySelector("input").value = +firstNum * +secondNum        
+    } else if (opperand === "*" && result !== 0) {
+        result = document.querySelector("input").value = +result * +secondNum
+    } else if (opperand === "+" && result === 0) {
+        result = document.querySelector("input").value = +firstNum + +secondNum
+    } else if (opperand === "+" && result !== 0) {
+        result = document.querySelector("input").value = +result + +secondNum
+    } else if (opperand === "-" && result === 0) {
+        result = document.querySelector("input").value = +firstNum - +secondNum
+    } else if (opperand === "-" && result !== 0) {
+        result = document.querySelector("input").value = +result - +secondNum
     }
 }
